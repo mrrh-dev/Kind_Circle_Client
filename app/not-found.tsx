@@ -1,6 +1,6 @@
-import Link from "next/link";
-import { FiCompass } from "react-icons/fi";
-import { buttonVariants } from "@/components/ui/button";
+import Link from 'next/link';
+import { FiCompass } from 'react-icons/fi';
+import { buttonVariants } from '@/components/ui/button';
 
 export default function NotFound() {
   return (
@@ -10,13 +10,14 @@ export default function NotFound() {
       </span>
       <h1 className="section-title mt-6">We could not find that page</h1>
       <p className="section-lead mx-auto">
-        The link may be old, or the event may have been removed by its organiser.
+        The link may be old, or the event may have been removed by its
+        organiser.
       </p>
       <div className="mt-8 flex flex-wrap justify-center gap-3">
         <Link href="/" className={buttonVariants()}>
           Go home
         </Link>
-        <Link href="/events" className={buttonVariants({ variant: "brand" })}>
+        <Link href="/events" className={buttonVariants({ variant: 'brand' })}>
           Browse upcoming events
         </Link>
       </div>
