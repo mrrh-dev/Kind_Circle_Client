@@ -3,8 +3,8 @@
 **Show up. Give back. Together.**
 KindCircle is a community platform where neighbours create, join and track social service events such as winter clothes drives, tree plantations and food distribution.
 
-**Live site:** https://YOUR-SITE.vercel.app  <!-- replace after deploying -->
-**API (Express on Render):** https://YOUR-API.onrender.com  <!-- replace after deploying -->
+**Live site:** https://YOUR-SITE.vercel.app <!-- replace after deploying -->
+**API (Express on Render):** https://YOUR-API.onrender.com <!-- replace after deploying -->
 
 ## Features
 
@@ -24,8 +24,8 @@ Next.js (App Router) · TypeScript · Tailwind CSS · shadcn/ui · BetterAuth ·
 
 ```bash
 npm install
-cp .env.example .env.local   # then fill in the values
+cp .env  # then fill in the values
 npm run dev                  # http://localhost:3000
 ```
 
-The API lives in the separate `events-server` repository. See the full setup and deploy steps in `SETUP.md`.
+The API lives in the separate `Kind_Circle-Server` repository.
