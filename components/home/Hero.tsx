@@ -71,16 +71,15 @@ export default function Hero() {
             <div className="overflow-hidden rounded-2xl border-4 border-background shadow-xl">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/gallery/tree_plant.jpg"
-                alt="Neighbours planting a tree"
+                src="/gallery/food_distribution.jpg"
+                alt="Volunteers serving meals"
                 className="aspect-square w-full object-cover"
               />
             </div>
             <div className="overflow-hidden rounded-2xl border-4 border-background shadow-xl">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/gallery/food_distribution.jpg"
-                alt="Volunteers serving meals"
+                src="/gallery/tree_plant.jpg"
+                alt="Neighbours planting a tree"
                 className="aspect-square w-full object-cover"
               />
             </div>
