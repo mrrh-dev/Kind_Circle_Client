@@ -1,25 +1,25 @@
-import { FiCalendar, FiGrid, FiMapPin, FiUserCheck } from "react-icons/fi";
+import { FiCalendar, FiGrid, FiMapPin, FiUserCheck } from 'react-icons/fi';
 
 const features = [
   {
     icon: FiCalendar,
-    title: "Host in a minute",
-    text: "Add a title, place, date and photo. Your event goes live right away for the whole community to see.",
+    title: 'Host in a minute',
+    text: 'Add a title, place, date and photo. Your event goes live right away for the whole community to see.',
   },
   {
     icon: FiUserCheck,
-    title: "Join with one tap",
-    text: "Found something you care about? Press Join Event and you are on the list. No forms, no phone calls.",
+    title: 'Join with one tap',
+    text: 'Found something you care about? Press Join Event and you are on the list. No forms, no phone calls.',
   },
   {
     icon: FiMapPin,
-    title: "Local by design",
-    text: "Every event shows its exact location, so you can find a drive in Mirpur or Mohammadpur that is close to home.",
+    title: 'Local by design',
+    text: 'Every event shows its exact location, so you can find a drive in Mirpur or Mohammadpur that is close to home.',
   },
   {
     icon: FiGrid,
-    title: "Your own dashboard",
-    text: "Edit or remove the events you host, and keep a tidy list of everything you have joined, sorted by date.",
+    title: 'Your own dashboard',
+    text: 'Edit or remove the events you host, and keep a tidy list of everything you have joined, sorted by date.',
   },
 ];
 
@@ -28,9 +28,12 @@ export default function Features() {
     <section className="page-shell py-20 md:py-24">
       <div className="mx-auto max-w-3xl text-center">
         <span className="section-eyebrow">Why KindCircle</span>
-        <h2 className="section-title">Everything a good deed needs, in one place</h2>
+        <h2 className="section-title">
+          Everything a good deed needs, in one place
+        </h2>
         <p className="section-lead mx-auto">
-          We built KindCircle so organising a clothes drive is as easy as joining one.
+          We built KindCircle so organising a clothes drive is as easy as
+          joining one.
         </p>
       </div>
 

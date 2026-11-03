@@ -1,32 +1,35 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { toast } from "sonner";
-import { FiMail, FiSend } from "react-icons/fi";
-import { isEmail } from "@/lib/validation";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { useState } from 'react';
+import { toast } from 'sonner';
+import { FiMail, FiSend } from 'react-icons/fi';
+import { isEmail } from '@/lib/validation';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 
 export default function Newsletter() {
-  const [email, setEmail] = useState("");
-  const [error, setError] = useState("");
+  const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
 
   function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
     if (!isEmail(email.trim())) {
-      setError("Enter a valid email address.");
-      toast.error("Please enter a valid email address.");
+      setError('Enter a valid email address.');
+      toast.error('Please enter a valid email address.');
       return;
     }
-    setError("");
-    setEmail("");
-    toast.success("Thank you for subscribing to the KindCircle newsletter!");
+    setError('');
+    setEmail('');
+    toast.success('Thank you for subscribing to the KindCircle newsletter!');
   }
 
   return (
     <section className="page-shell pb-4">
       <div className="relative overflow-hidden rounded-2xl bg-neutral px-6 py-14 text-neutral-content sm:px-12 md:py-16">
-        <div className="dot-grid pointer-events-none absolute inset-0 text-secondary opacity-25" aria-hidden="true" />
+        <div
+          className="dot-grid pointer-events-none absolute inset-0 text-secondary opacity-25"
+          aria-hidden="true"
+        />
         <div
           className="pointer-events-none absolute -bottom-24 -left-16 h-72 w-72 rounded-full bg-primary/40 blur-3xl"
           aria-hidden="true"
@@ -41,11 +44,16 @@ export default function Newsletter() {
               Never miss a chance to help
             </h2>
             <p className="mt-4 text-neutral-content/80">
-              One short email a week with the best upcoming drives, plantations and camps near you.
+              One short email a week with the best upcoming drives, plantations
+              and camps near you.
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} noValidate aria-label="Newsletter signup">
+          <form
+            onSubmit={handleSubmit}
+            noValidate
+            aria-label="Newsletter signup"
+          >
             <label htmlFor="newsletter-email" className="sr-only">
               Email address
             </label>
@@ -56,23 +64,34 @@ export default function Newsletter() {
                 value={email}
                 onChange={(event) => {
                   setEmail(event.target.value);
-                  setError("");
+                  setError('');
                 }}
                 placeholder="you@example.com"
                 aria-invalid={Boolean(error)}
-                aria-describedby={error ? "newsletter-error" : undefined}
+                aria-describedby={error ? 'newsletter-error' : undefined}
                 className="h-12"
               />
-              <Button type="submit" variant="secondary" size="lg" className="shrink-0">
+              <Button
+                type="submit"
+                variant="secondary"
+                size="lg"
+                className="shrink-0"
+              >
                 Subscribe <FiSend className="h-4 w-4" />
               </Button>
             </div>
             {error && (
-              <p id="newsletter-error" role="alert" className="mt-2 text-sm text-destructive-content/90">
+              <p
+                id="newsletter-error"
+                role="alert"
+                className="mt-2 text-sm text-destructive-content/90"
+              >
                 {error}
               </p>
             )}
-            <p className="mt-3 text-sm text-neutral-content/60">No spam. Unsubscribe whenever you like.</p>
+            <p className="mt-3 text-sm text-neutral-content/60">
+              No spam. Unsubscribe whenever you like.
+            </p>
           </form>
         </div>
       </div>
