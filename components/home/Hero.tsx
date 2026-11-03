@@ -16,8 +16,8 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      <div className="page-shell relative grid items-center gap-12 py-16 md:py-24 lg:grid-cols-[1.1fr_0.9fr]">
-        <div>
+      <div className="page-shell lg:-mt-12 relative grid items-center gap-12 py-16 md:py-24 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="lg:-mt-4">
           <span className="section-eyebrow">
             <FiHeart className="h-4 w-4" /> Community powered giving
           </span>
@@ -63,7 +63,7 @@ export default function Hero() {
             <div className="col-span-2 overflow-hidden rounded-2xl border-4 border-background shadow-xl">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/gallery/winter-clothes.svg"
+                src="/gallery/winter_cloth.jpg"
                 alt="Volunteers handing out winter clothes"
                 className="aspect-[16/9] w-full object-cover"
               />
@@ -71,7 +71,7 @@ export default function Hero() {
             <div className="overflow-hidden rounded-2xl border-4 border-background shadow-xl">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/gallery/tree-plantation.svg"
+                src="/gallery/tree_plant.jpg"
                 alt="Neighbours planting a tree"
                 className="aspect-square w-full object-cover"
               />
@@ -79,7 +79,7 @@ export default function Hero() {
             <div className="overflow-hidden rounded-2xl border-4 border-background shadow-xl">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/gallery/food-distribution.svg"
+                src="/gallery/food_distribution.jpg"
                 alt="Volunteers serving meals"
                 className="aspect-square w-full object-cover"
               />
