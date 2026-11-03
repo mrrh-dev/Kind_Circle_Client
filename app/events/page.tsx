@@ -1,9 +1,10 @@
-import type { Metadata } from "next";
-import EventsExplorer from "@/components/EventsExplorer";
+import type { Metadata } from 'next';
+import EventsExplorer from '@/components/EventsExplorer';
 
 export const metadata: Metadata = {
-  title: "Upcoming Events",
-  description: "Browse upcoming community service events and join the ones you care about.",
+  title: 'Upcoming Events',
+  description:
+    'Browse upcoming community service events and join the ones you care about.',
 };
 
 export default function EventsPage() {
@@ -13,7 +14,8 @@ export default function EventsPage() {
         <span className="section-eyebrow">Find your cause</span>
         <h1 className="section-title">Upcoming events</h1>
         <p className="section-lead">
-          Every event here is still ahead of us. Open one to see the details and join in.
+          Every event here is still ahead of us. Open one to see the details and
+          join in.
         </p>
       </header>
       <EventsExplorer />

@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
-import { toast } from "sonner";
-import { FiCheckCircle, FiHeart } from "react-icons/fi";
-import { ApiError, api } from "@/lib/api";
-import { useSession } from "@/lib/auth-client";
-import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
+import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { toast } from 'sonner';
+import { FiCheckCircle, FiHeart } from 'react-icons/fi';
+import { ApiError, api } from '@/lib/api';
+import { useSession } from '@/lib/auth-client';
+import { Button } from '@/components/ui/button';
+import { Loader2 } from 'lucide-react';
 
 type Props = {
   eventId: string;
@@ -43,8 +43,10 @@ export default function JoinButton({ eventId, ended }: Props) {
 
   async function handleJoin() {
     if (!session) {
-      toast.error("Please log in to join this event.");
-      router.push(`/login?redirect=${encodeURIComponent(`/events/${eventId}`)}`);
+      toast.error('Please log in to join this event.');
+      router.push(
+        `/login?redirect=${encodeURIComponent(`/events/${eventId}`)}`,
+      );
       return;
     }
 
@@ -57,9 +59,11 @@ export default function JoinButton({ eventId, ended }: Props) {
     } catch (error) {
       if (error instanceof ApiError && error.status === 409) {
         setJoined(true);
-        toast.success("You are already on the list for this event.");
+        toast.success('You are already on the list for this event.');
       } else {
-        toast.error(error instanceof Error ? error.message : "Could not join the event.");
+        toast.error(
+          error instanceof Error ? error.message : 'Could not join the event.',
+        );
       }
     } finally {
       setLoading(false);
@@ -68,7 +72,13 @@ export default function JoinButton({ eventId, ended }: Props) {
 
   if (ended) {
     return (
-      <Button type="button" variant="outline" size="lg" className="w-full" disabled>
+      <Button
+        type="button"
+        variant="outline"
+        size="lg"
+        className="w-full"
+        disabled
+      >
         This event has ended
       </Button>
     );
@@ -76,7 +86,13 @@ export default function JoinButton({ eventId, ended }: Props) {
 
   if (joined) {
     return (
-      <Button type="button" variant="success" size="lg" className="w-full" disabled>
+      <Button
+        type="button"
+        variant="success"
+        size="lg"
+        className="w-full"
+        disabled
+      >
         <FiCheckCircle className="h-5 w-5" /> You have joined this event
       </Button>
     );
@@ -87,14 +103,15 @@ export default function JoinButton({ eventId, ended }: Props) {
       type="button"
       onClick={handleJoin}
       disabled={loading || isPending || checking}
-      size="lg" className="w-full"
+      size="lg"
+      className="w-full"
     >
       {loading ? (
         <Loader2 className="h-4 w-4 animate-spin" />
       ) : (
         <FiHeart className="h-5 w-5" />
       )}
-      {loading ? "Joining..." : "Join Event"}
+      {loading ? 'Joining...' : 'Join Event'}
     </Button>
   );
 }
