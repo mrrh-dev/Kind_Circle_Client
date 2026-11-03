@@ -3,7 +3,7 @@
 **Show up. Give back. Together.**
 KindCircle is a community platform where neighbours create, join and track social service events such as winter clothes drives, tree plantations and food distribution.
 
-**Live site:**
+**Live site:** https://kindcircle-ashen.vercel.app
 
 ## Features
 

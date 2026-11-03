@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
-import { Suspense } from "react";
-import LoginForm from "@/components/LoginForm";
-import { PageSkeleton } from "@/components/Skeletons";
+import type { Metadata } from 'next';
+import { Suspense } from 'react';
+import LoginForm from '@/components/LoginForm';
+import { PageSkeleton } from '@/components/Skeletons';
 
-export const metadata: Metadata = { title: "Login" };
+export const metadata: Metadata = { title: 'Login' };
 
 export default function LoginPage() {
   return (
