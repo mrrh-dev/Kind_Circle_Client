@@ -1,5 +1,5 @@
-import { FiCheckCircle } from "react-icons/fi";
-import { LogoMark } from "./Logo";
+import { FiCheckCircle } from 'react-icons/fi';
+import { LogoMark } from './Logo';
 
 type Props = {
   title: string;
@@ -8,9 +8,9 @@ type Props = {
 };
 
 const perks = [
-  "Join a drive with one tap",
-  "Host events for your own neighbourhood",
-  "Keep track of everything you signed up for",
+  'Join a drive with one tap',
+  'Host events for your own neighbourhood',
+  'Keep track of everything you signed up for',
 ];
 
 export default function AuthShell({ title, subtitle, children }: Props) {
@@ -18,7 +18,10 @@ export default function AuthShell({ title, subtitle, children }: Props) {
     <div className="page-shell py-10 md:py-16">
       <div className="mx-auto grid max-w-5xl overflow-hidden rounded-2xl border border-border bg-background shadow-xl lg:grid-cols-[0.9fr_1.1fr]">
         <div className="relative hidden flex-col justify-between overflow-hidden bg-primary p-10 text-primary-foreground lg:flex">
-          <div className="dot-grid pointer-events-none absolute inset-0 opacity-25" aria-hidden="true" />
+          <div
+            className="dot-grid pointer-events-none absolute inset-0 opacity-25"
+            aria-hidden="true"
+          />
           <div className="relative">
             <span className="inline-flex rounded-2xl bg-background p-2 shadow-md">
               <LogoMark className="h-10 w-10" />
