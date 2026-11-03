@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useRouter } from "next/navigation";
-import { toast } from "sonner";
-import { api } from "@/lib/api";
-import EventForm from "./EventForm";
+import { useRouter } from 'next/navigation';
+import { toast } from 'sonner';
+import { api } from '@/lib/api';
+import EventForm from './EventForm';
 
 export default function CreateEventClient() {
   const router = useRouter();
@@ -15,8 +15,8 @@ export default function CreateEventClient() {
           <span className="section-eyebrow">Host an event</span>
           <h1 className="section-title">Create a new event</h1>
           <p className="section-lead">
-            Tell the community what you are planning. Your event appears on the Upcoming Events page as soon as you
-            publish it.
+            Tell the community what you are planning. Your event appears on the
+            Upcoming Events page as soon as you publish it.
           </p>
         </header>
 
@@ -27,8 +27,10 @@ export default function CreateEventClient() {
             savingLabel="Publishing..."
             onSubmit={async (payload) => {
               await api.createEvent(payload);
-              toast.success("Your event is live! Taking you to Upcoming Events.");
-              router.push("/events");
+              toast.success(
+                'Your event is live! Taking you to Upcoming Events.',
+              );
+              router.push('/events');
             }}
           />
         </div>
