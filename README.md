@@ -3,8 +3,7 @@
 **Show up. Give back. Together.**
 KindCircle is a community platform where neighbours create, join and track social service events such as winter clothes drives, tree plantations and food distribution.
 
-**Live site:** https://YOUR-SITE.vercel.app <!-- replace after deploying -->
-**API (Express on Render):** https://YOUR-API.onrender.com <!-- replace after deploying -->
+**Live site:**
 
 ## Features
 
