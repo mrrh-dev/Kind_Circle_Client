@@ -1,0 +1,165 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ---------- shadcn/ui design tokens ----------
+   Light: warm paper, deep teal, saffron.  Dark: midnight green, bright mint, amber. */
+:root {
+  --radius: 0.75rem;
+
+  --background: #fffaf1;
+  --foreground: #1f2f2a;
+  --card: #fffdf8;
+  --card-foreground: #1f2f2a;
+  --popover: #fffdf8;
+  --popover-foreground: #1f2f2a;
+  --primary: #0b6b5d;
+  --primary-foreground: #ffffff;
+  --secondary: #f2a516;
+  --secondary-foreground: #2a1c00;
+  --muted: #f6eddd;
+  --muted-foreground: #5d6b65;
+  --accent: #efe3c9;
+  --accent-foreground: #1f2f2a;
+  --destructive: #c8372d;
+  --border: #e8dcc4;
+  --input: #d9ccb0;
+  --ring: #0b6b5d;
+
+  /* extra brand colours that shadcn does not ship */
+  --success: #2f9e5b;
+  --warning: #e0a100;
+  --coral: #d9482b;
+  --neutral: #123a33;
+  --neutral-content: #f3efe4;
+}
+
+.dark {
+  --background: #0e1b18;
+  --foreground: #e9f2ee;
+  --card: #112019;
+  --card-foreground: #e9f2ee;
+  --popover: #13241f;
+  --popover-foreground: #e9f2ee;
+  --primary: #3fc8b2;
+  --primary-foreground: #03211c;
+  --secondary: #f7b733;
+  --secondary-foreground: #2a1c00;
+  --muted: #13241f;
+  --muted-foreground: #9db3ab;
+  --accent: #1d352e;
+  --accent-foreground: #e9f2ee;
+  --destructive: #ff6b61;
+  --border: #1d352e;
+  --input: #2a4a41;
+  --ring: #3fc8b2;
+
+  --success: #4cc77f;
+  --warning: #f0b429;
+  --coral: #ff7a59;
+  --neutral: #091512;
+  --neutral-content: #dcebe5;
+}
+
+@theme inline {
+  --font-sans: "DM Sans Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces Variable", ui-serif, Georgia, serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-coral: var(--coral);
+  --color-neutral: var(--neutral);
+  --color-neutral-content: var(--neutral-content);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    line-height: 1.65;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+}
+
+/* One heading style for every section, as the brief asks */
+@layer components {
+  .section-eyebrow {
+    @apply mb-3 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-primary;
+  }
+  .section-title {
+    @apply font-display text-3xl font-bold leading-tight text-foreground md:text-4xl;
+  }
+  .section-lead {
+    @apply mt-4 max-w-2xl text-base leading-relaxed text-foreground/70 md:text-lg;
+  }
+  .page-shell {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  /* Same look as the shadcn Card, for plain wrappers */
+  .surface-card {
+    @apply rounded-2xl border bg-card text-card-foreground shadow-sm;
+  }
+}
+
+/* Soft dotted texture used behind hero and footer */
+.dot-grid {
+  background-image: radial-gradient(color-mix(in oklab, currentColor 18%, transparent) 1.2px, transparent 1.2px);
+  background-size: 22px 22px;
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+.floaty {
+  animation: floaty 6s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .floaty {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
