@@ -6,7 +6,6 @@ import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import EventImage from './EventImage';
 import { buttonVariants } from '@/components/ui/button';
-import Image from 'next/image';
 
 type Props = {
   event: EventItem;

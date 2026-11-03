@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useEffect } from "react";
-import { toast } from "sonner";
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { useEffect } from 'react';
+import { toast } from 'sonner';
 
 /**
  * Google login leaves the site and comes back, so the success toast is shown
@@ -14,10 +14,10 @@ export default function WelcomeToast() {
   const router = useRouter();
 
   useEffect(() => {
-    if (params.get("welcome") !== "1") return;
-    toast.success("Welcome to KindCircle! You are now logged in.");
+    if (params.get('welcome') !== '1') return;
+    toast.success('Welcome to KindCircle! You are now logged in.');
     const next = new URLSearchParams(params.toString());
-    next.delete("welcome");
+    next.delete('welcome');
     const query = next.toString();
     router.replace(query ? `${pathname}?${query}` : pathname);
   }, [params, pathname, router]);
